@@ -6,9 +6,7 @@ pipeline {
     stages {
         stage('Run Terraform') {
             steps {
-                dir('/home/hima/learn-terraform-aws-instance') {
-                    sh 'terraform apply --auto-approve'
-                }
+                sh 'terraform apply --auto-approve'
             }
         }
     }
