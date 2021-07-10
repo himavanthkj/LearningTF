@@ -1,10 +1,16 @@
 pipeline {
-    agent { docker { image 'maven:3.3.3' } }
+    agent any
+    tools {
+        terraform 'TerraformIAC'
+    }
     stages {
-        stage('build') {
+        stage('Run Terraform') {
             steps {
-                sh 'mvn --version'
+                dir('/home/hima/learn-terraform-aws-instance') {
+                    sh 'terraform apply --auto-approve'
+                }
             }
         }
     }
 }
+
