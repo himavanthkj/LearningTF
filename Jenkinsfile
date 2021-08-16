@@ -5,8 +5,6 @@ pipeline {
         booleanParam(name: 'autoApprove', defaultValue: false, description: 'Automatically run apply after generating plan?')
 
     }
-
-
    agent  any
         options {
                 timestamps ()
